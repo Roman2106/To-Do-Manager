@@ -1,0 +1,605 @@
+body, html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+#wrapper{
+	width: 100%;
+	font-family: Arial;
+}
+
+#wrapperTwo{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.app{
+	width: 800px;
+	margin: 20px auto;
+}
+
+.formForTask{
+	border: 1px solid #41AF4E;
+	border-radius: 3px;
+	margin-bottom: 50px;
+}
+
+.headerForm{
+	background: #41AF4E;
+	height: 60px;
+	border-radius: 1px;
+}
+
+.headerForm h4{
+	color: white;
+	margin: 0;
+	padding: 22px 0 0 0;
+	font-size: 16px;
+}
+
+.expand{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/expand.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	float: left;
+	margin: 22px;
+}
+
+#headerForm:hover{
+	cursor: pointer;
+}
+
+.form {
+	height: 305px;
+	transition-property: height;
+	transition-duration: 1s;
+	overflow: hidden;
+}
+
+.formFadeOut {
+	height: 0;
+	transition-property: height;
+	transition-duration: 1s;
+	overflow: hidden;
+}
+
+#form p{
+	margin: 15px 5px;
+	padding: 5px 20px;
+	display: inline-block;
+}
+
+#form label{
+	display: inline-block;
+	width: 115px;
+	color: #3F413D;
+	font-size: 16px;
+}
+
+#firstinput{
+	float: left;
+}
+
+#form textarea{
+	resize: none;
+	border: 1px solid #DDDEDD;
+	border-radius: 3px;
+	width: 450px;
+	height: 90px;
+	padding: 8px;
+	font-size: 12px;
+}
+
+#form input[type="date"]{
+	font-family: Arial;
+	color: #757675;
+}
+
+#form input[type="text"], #form input[type="date"]{
+	border: 1px solid #DDDEDD;
+	border-radius: 3px;
+	width: 200px;
+	padding: 8px;
+	font-size: 12px;
+}
+
+#firstinput label{
+	margin-right: 18px;
+}
+
+#whattodo{
+	float: left;
+}
+
+#whattodo label{
+	vertical-align: top;
+	width: 100px;
+}
+
+.addTask {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background: linear-gradient(to bottom, #41AF4E 5%, #72b352 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+	background-color: #77b55a;
+	border-radius: 3px;
+	border: 1px solid #4b8f29;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 9px 35px;
+	text-shadow:0px 1px 0px #5b8a3c;
+	position: relative;
+	top: 122px;
+	left: 2px;
+	outline: none;
+}
+
+.addTask:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #41AF4E 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+	background-color:#72b352;
+}
+.addTask:active {
+	position: relative;
+	top:124px;
+}
+
+#warning{
+	float: left;
+}
+
+#green{
+	color: #3BB048;
+}
+
+#yellow{
+	color: #D5D66A;
+}
+
+#purple{
+	color: purple;
+}
+
+#priority{
+	padding: 0;
+	margin: 20px 0 0 25px;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+
+#priority:hover{
+	cursor: pointer;
+}
+
+#priority p{
+	display: inline-block;
+	padding: 8px 50px 8px 18px;
+	background-image: url(../images/arrowDown.svg);
+	background-repeat: no-repeat;
+	background-color: #41AF4E;	
+	border-radius: 2px;
+	border: 1px solid #4b8f29;
+	color: white;
+	font-size: 14px;
+	background-position: top 12px right 18px;
+	margin: 0;
+	position: relative;
+}
+
+#priority p:hover{
+	opacity: 0.8;
+}
+
+ul.dropOne{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-size: 14px;
+	color: white;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 110px;
+	transition-property: height;
+	transition-duration: 1s;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+ul.dropOneFadeOut{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-size: 14px;
+	color: white;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 0;
+	transition-property: height;
+	transition-duration: 1s;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+ul#dropOne li{
+	padding: 9px 2px 9px 2px;
+	border-bottom:1px solid #DCDEDC;
+	background-color: #41AF4E;
+	border-radius: 2px;
+}
+
+ul#dropOne li:nth-child(1){
+	border-top:1px solid #DCDEDC;
+}
+
+ul#dropOne li:hover{
+	opacity: 0.8;
+}
+
+.search{
+	margin: 80px auto 40px auto;
+	max-width: 92%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.ourSearch{
+	display: inline-block;
+	text-align: center;
+}
+
+#searchInput{
+	width: 300px;
+	padding: 10px 0 10px 12px;
+	margin: 0;
+	border: none;
+	font-size: 12px;
+	border: 1px solid #4b8f29;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.nav{
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+
+#sortBy:hover{
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#nav p{
+	padding: 11px 40px 10px 20px;
+	background-image: url(../images/arrowDown.svg);
+	background-repeat: no-repeat;	
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-top: 1px solid #4b8f29;
+	border-right: 1px solid #4b8f29;
+	border-bottom: 1px solid #4b8f29;
+	color: white;
+	background-color: #41AF4E;	
+	font-size: 12px;
+	background-position: top 13px right 20px;
+	margin: 0 0 0 -1px;
+	position: relative;
+}
+
+ul.dropTwo{
+	list-style-type: none;
+	margin: 0 0 0 -1px;
+	padding: 0;
+	text-align: left;
+	font-size: 12px;
+	color: white;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 120px;
+	transition-property: height;
+	transition-duration: 1s;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+ul.dropTwoFadeOut{
+	list-style-type: none;
+	margin: 0 0 0 -1px;
+	padding: 0;
+	text-align: left;
+	font-size: 12px;
+	color: white;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 0;
+	transition-property: height;
+	transition-duration: 1s;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+ul#dropTwo li{
+	padding: 12px 6px 12px 6px;
+	border-bottom:1px solid #DCDEDC;
+	background-color: #41AF4E;
+	border-radius: 2px;
+}
+
+ul#dropTwo li:hover{
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+ul#dropTwo li:nth-child(1){
+	border-top:1px solid #DCDEDC;
+}
+
+.completed{
+	float: left;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background: linear-gradient(to bottom, #41AF4E 5%, #72b352 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+	background-color: #77b55a;
+	border-radius: 3px;
+	border: 1px solid #4b8f29;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 9px 8px;
+	margin-right: 18px;
+	text-shadow:0px 1px 0px #5b8a3c;
+	outline: none;
+}
+
+.completed:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #41AF4E 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+	background-color:#72b352;
+}
+.completed:active {
+	position: relative;
+	top: 2px;
+}
+
+.tasksForExecution {
+	text-align: center;
+	color: #3F413D;
+}
+
+#forTask{
+	margin: 15px auto;
+	position: relative;
+	max-width: 90%;
+	color: #3F413D;
+}
+
+.forTaskBorderGreen{
+	padding: 0.6em;
+	border: 0.2em solid transparent;
+	background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, #3BB048 0, #3BB048 12.5%, transparent 0, transparent 25%, #3BB048 0, #3BB048 37.5%, transparent 0, transparent 50%) 0/ 5em 5em;
+	border-radius: 10px;
+}
+
+.forTaskBorderYellow{
+	padding: 0.6em;
+	border: 0.2em solid transparent;
+	background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, #D5D762 0, #D5D762 12.5%, transparent 0, transparent 25%, #D5D762 0, #D5D762 37.5%, transparent 0, transparent 50%) 0/ 5em 5em;
+	border-radius: 10px;
+}
+
+.forTaskBorderPurple{
+	padding: 0.6em;
+	border: 0.2em solid transparent;
+	background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, #810081 0, #810081 12.5%, transparent 0, transparent 25%, #810081 0, #810081 37.5%, transparent 0, transparent 50%) 0/ 5em 5em;
+	border-radius: 10px;
+}
+
+#close {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: red;
+	background-image: url(../images/close.svg);
+	border-radius: 2px;
+	background-position: center center;
+	background-size: 14px 14px;
+	background-origin: 50% 50%;
+	background-repeat: no-repeat;
+	padding: 0;
+	margin: 0;
+	border: 1px solid red;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+#close:hover{
+	cursor: pointer;
+	color
+}
+
+#close:active{
+	position: absolute;
+	top: 17px;
+}
+
+.currentPerfomerName, .currentPriority{
+	display: inline-block;
+	margin-left: 80px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#currentTask h3{
+	text-align: center;
+	margin-top: 5px;
+}
+
+#forTaskText{
+	margin-left: 10px;
+	text-indent: 20px;
+}
+
+#dateOfCompletion{
+	margin-left: 17px;
+	margin-top: 20px;
+}
+
+#dateOfCompletion label{
+	margin-right: 20px;
+}
+
+#dateOfCompletion input{
+	border: 1px solid #DDDEDD;
+	border-radius: 3px;
+	width: 250px;
+	padding: 8px;
+	font-size: 12px;
+	margin-bottom: 50px;
+}
+
+.moveToCompleted{
+	float: right;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background: linear-gradient(to bottom, #41AF4E 5%, #72b352 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+	background-color: #77b55a;
+	border-radius: 3px;
+	border: 1px solid #4b8f29;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 9px 8px;
+	margin-right: 18px;
+	text-shadow:0px 1px 0px #5b8a3c;
+	outline: none;
+	margin-right: 30px;
+}
+
+.moveToCompleted:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #41AF4E 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+	background-color:#72b352;
+}
+.moveToCompleted:active {
+	position: relative;
+	top: 2px;
+}
+
+#curentDateOfIssue {
+	display: inline-block;
+	margin-bottom: 20px;
+	position: absolute;
+	right: 30px;
+	bottom: 2px;
+	margin-bottom: 10px;
+}
+
+#forTask input[type="date"]{
+	font-family: Arial;
+	color: #757675;
+}
+
+#completedTask{
+	margin: 0 auto;
+	width: 92%;
+	color: #3F413D;
+}
+
+#completedTask h3{
+	text-align: center;
+}
+
+.exit {
+	box-shadow: inset 0px 1px 0px 0px #f29c93;
+	background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100',GradientType=0);
+	background-color: #fe1a00;
+	border-radius: 2px;
+	border: 1px solid #d83526;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 14px;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #b23e35;
+	outline: none;
+}
+.exit:hover {
+	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00',GradientType=0);
+	background-color:#ce0100;
+}
+.exit:active {
+	position: relative;
+	top: 2px;
+}
+
+#generatedCompleted{
+	margin-top: 20px;
+	padding: 0.6em;
+	border: 0.2em solid transparent;
+	background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, #DCDEDC 0, #DCDEDC 12.5%, transparent 0, transparent 25%, #DCDEDC 0, #DCDEDC 37.5%, transparent 0, transparent 50%) 0/ 5em 5em;
+	border-radius: 10px;
+	font-size: 16px;
+}
+
+#complPerfomerName, #complPriority{
+	display: inline-block;
+	margin-right: 50px;
+}
+#our{
+	text-align: center;
+}
+
+#complText{
+	margin-left: 10px;
+	text-indent: 20px;
+}
+
+#ourTwo{
+	margin-left: 420px;
+	margin-bottom: 0;
+	text-align: right;
+}
+
+#ourTwo p{
+	display: inline-block;
+	margin: 10px;
+}
+
+g#eneratedCompleted h3{
+	text-align: center;
+}
+
+
+
+
+
+
+
